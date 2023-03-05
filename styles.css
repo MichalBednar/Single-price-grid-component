@@ -92,6 +92,7 @@ section {
 }
 .pricing button:hover {
   background-color: hsl(71, 76%, 61%);
+  cursor: pointer;
 }
 
 .why-us {

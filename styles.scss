@@ -103,6 +103,7 @@ section {
     }
     button:hover {
         background-color: $button-hover;
+        cursor: pointer;
     }
 }
 

@@ -1,0 +1,177 @@
+$cyan: hsl(179, 62%, 43%);
+$light-cyan:hsl(179, 60%, 47%);
+$bright-yellow: hsl(71, 73%, 54%);
+$button-hover: hsl(71, 76%, 61%);
+$light-gray: hsl(204, 43%, 93%);
+$grayish-blue: hsl(218, 22%, 67%);
+$white: hsl(0, 0%, 100%);
+$transparent-white: hsla(0, 0%, 100%, 0.7);
+
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+@mixin header {
+    font-size: 2.1rem;
+    font-weight: 700;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Karla';
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $light-gray;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+main {
+    margin-top: 4rem;
+    width: 32.5rem;
+    border-radius: 0.8rem;
+    overflow: hidden;
+}
+
+section {
+    padding: 2rem;
+}
+
+.info {
+    background-color: $white;
+    padding-bottom: 4rem;
+    h1 {
+        @include header();
+        color: $cyan;
+    }
+    p {
+        font-size: 1.5rem;
+        margin-top: 1.7rem;
+        color: $grayish-blue;
+        line-height: 2.3rem;
+    }
+    .yellow-text {
+        color: $bright-yellow;
+        font-weight: 700;
+        margin-top: 2rem;
+        line-height: 1.8rem;
+    }
+}
+
+.pricing {
+    background-color: $cyan;
+    padding-bottom: 2.5rem;
+    header {
+        @include header();
+        color: $white;
+    }
+    p {
+        font-size: 1.5rem;
+        color: $white;
+        margin-top: 1rem;
+    }
+    p:first-of-type {
+        margin-top: 1.5rem;
+        display: inline-flex;
+        align-items: center;
+        color: $transparent-white;
+        span {
+            color: $white;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-right: 1.5rem;
+        }
+    }
+    button {
+        margin-top: 2.5rem;
+        border: none;
+        padding: 1.3rem;
+        width: 100%;
+        border-radius: 0.6rem;
+        background-color: $bright-yellow;
+        color: $white;
+        font-size: 1.5rem;
+        font-family: 'Karla';
+        box-shadow: 1px 1px 20px rgb(77, 77, 77);
+        transition: 0.2s;
+    }
+    button:hover {
+        background-color: $button-hover;
+    }
+}
+
+.why-us {
+    background-color: $light-cyan;
+    padding-bottom: 3rem;
+    header {
+        @include header();
+        color: $white;
+    }
+    ul {
+        margin-top: 2rem;
+        li {
+        list-style: none;
+        font-size: 1.5rem;
+        color: $light-gray;
+        margin-top: 0.5rem;
+        }
+    }
+}
+
+footer {
+    margin-top: 0.5rem;
+    margin-bottom: 4rem;
+    .attribution {
+        color: $cyan;
+        a {
+            color: $bright-yellow;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        a:hover {
+            color: $cyan;
+            text-decoration: underline;
+        }
+    }
+}
+
+@media (min-width: 660px) {
+    main {
+        width: 80%;
+        max-width: 60rem;
+        display: grid;
+        grid-template-areas: 
+        'top top'
+        'left right'
+        ;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .info {
+        grid-area: top;
+        padding: 4rem;
+    }
+    .pricing {
+        grid-area: left;
+        padding: 3rem;
+        header {
+            font-size: 1.8rem;
+        }
+        button {
+            margin-top: 3.5rem;
+        }
+    }
+    .why-us {
+        grid-area: right;
+        padding: 3rem;
+        header {
+            font-size: 1.8rem;
+        }
+    }
+}
